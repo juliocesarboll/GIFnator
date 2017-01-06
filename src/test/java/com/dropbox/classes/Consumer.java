@@ -1,33 +1,25 @@
 package com.dropbox.classes;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
-import com.dropbox.core.v2.files.GetThumbnailBuilder;
+import com.dropbox.core.v2.users.FullAccount;
 
 public class Consumer {
 
-	private static final String ACCESS_TOKEN = "vheeosCvmgAAAAAAAAAACOqKsa_XxgGYY8ignsjq6VIAIiMejBehC7qw-xnvQewo";
+	private static final String ACCESS_TOKEN = "UhJIWAS1WQoAAAAAAAAAsN-a4-YxIxO0OqyEbP0lAge2LI2bCJaChd_X2BZji1cF";
 
 	public static void main(String args[]) throws DbxException, IOException {
 		// Create Dropbox client
-		DbxRequestConfig config = new DbxRequestConfig("teste intelly");
+		DbxRequestConfig config = new DbxRequestConfig("GIFnator");
 		DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
 		
-		OutputStream out = new FileOutputStream("./Files/THUMB.png");
-		String path =  "Console.png";
-		GetThumbnailBuilder file = client.files().getThumbnailBuilder(path);
-		file.download(out);
-		
-/*		 
 		// Get current account info
 		FullAccount account = client.users().getCurrentAccount();
 		System.out.println(account.getName().getDisplayName());
-
+/*
 		// Get files and folder metadata from Dropbox root directory
 		ListFolderResult result = client.files().listFolder("");
 		
