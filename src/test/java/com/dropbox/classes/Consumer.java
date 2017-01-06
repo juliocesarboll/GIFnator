@@ -15,7 +15,7 @@ public class Consumer {
 		// Create Dropbox client
 		DbxRequestConfig config = new DbxRequestConfig("GIFnator");
 		DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
-		
+		   
 		// Get current account info
 		FullAccount account = client.users().getCurrentAccount();
 		System.out.println(account.getName().getDisplayName());
